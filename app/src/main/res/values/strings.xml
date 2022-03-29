@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">RecyclerViewSimpleKT</string>
+    <string name="person">Person</string>
+</resources>
