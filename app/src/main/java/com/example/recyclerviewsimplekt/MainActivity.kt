@@ -2,9 +2,11 @@ package com.example.recyclerviewsimplekt
 
 import android.content.Context
 import android.os.Bundle
+import android.widget.LinearLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.widget.NestedScrollView
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.recyclerviewsimplekt.adapter.RecyclerAdapter
 
@@ -21,7 +23,7 @@ class MainActivity : AppCompatActivity() {
         context = this
         recyclerView = findViewById(R.id.recyc)
         nestedScrollView = findViewById(R.id.nest)
-        recyclerView.layoutManager = GridLayoutManager(context, 3)
+        recyclerView.layoutManager = LinearLayoutManager(this,RecyclerView.HORIZONTAL,false)
         val foods = intArrayOf(
             R.drawable.img1, R.drawable.img2, R.drawable.img3, R.drawable.img4,
             R.drawable.img5, R.drawable.img6, R.drawable.img7, R.drawable.img8, R.drawable.img9,
