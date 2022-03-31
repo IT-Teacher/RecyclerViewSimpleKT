@@ -3,11 +3,13 @@ package com.example.recyclerviewsimplekt
 import android.content.Context
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.widget.NestedScrollView
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.recyclerviewsimplekt.adapter.RecyclerAdapter
 
 class MainActivity : AppCompatActivity() {
+    private lateinit var nestedScrollView : NestedScrollView
     private lateinit var recyclerView: RecyclerView
     private lateinit var context: Context
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -18,6 +20,7 @@ class MainActivity : AppCompatActivity() {
     fun initViews() {
         context = this
         recyclerView = findViewById(R.id.recyc)
+        nestedScrollView = findViewById(R.id.nest)
         recyclerView.layoutManager = GridLayoutManager(context, 3)
         val foods = intArrayOf(
             R.drawable.img1, R.drawable.img2, R.drawable.img3, R.drawable.img4,
@@ -30,5 +33,7 @@ class MainActivity : AppCompatActivity() {
     fun refreshAdapter(foods: IntArray?) {
         val adapter = RecyclerAdapter(foods)
         recyclerView.adapter = adapter
+        recyclerView.isNestedScrollingEnabled = false
+
     }
 }
